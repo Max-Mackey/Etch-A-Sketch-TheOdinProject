@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let size = 0;
-    // captures the user input once submit is pressed and assings it to the variable "size"
+    // captures the user input once submit is pressed and assigns it to the variable "size"
     const button = document.querySelector('.submit');
     button.addEventListener('click', function() {
         const theGridSize = document.querySelector('.gridSize');
@@ -30,13 +30,19 @@ document.addEventListener("DOMContentLoaded", function() {
     creation.addEventListener('click', function() {
         for (let i = 0; i < size; i++) {
         const div = document.createElement('div');
+        div.classList.add("drawMe");
         div.style.color ='black';
         div.style.padding = 0;
         div.style.margin = 0;
         div.style.backgroundColor = 'white';
         div.textContent = "x";
-        document.querySelector('.board').appendChild(div)
-    }})
+        document.querySelector('.board').appendChild(div);   
+        }
+})
+        
+    
+
+    })
 
     // Reset button. Wipes the board to it's original state
     const eraseBoard = document.querySelector('.reset');
@@ -44,4 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const board = document.querySelector('.board');
         board.innerHTML ='';
     });
-})
+
+    
+
