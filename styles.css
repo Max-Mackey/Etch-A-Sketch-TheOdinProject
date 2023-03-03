@@ -1,0 +1,48 @@
+/* Bright Green and Hot pink color scheme #31EC56 #EF036C #EE72F8 */
+body {
+    background-color: #31EC56;
+}
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: white;
+}
+button {
+    padding: 8px;
+    margin: 8px;
+}
+.sidebar {
+    display:flex;
+    flex-direction: column;
+}
+.container {
+    display:flex;
+    justify-content: center;
+}
+.board {
+    margin-left: 150px;
+    min-width: 640px;
+    min-height: 640px;
+    max-width: 640px;
+    max-height: 640px;
+    background: white;
+    box-shadow: 10px 10px #EF036C;
+    border: solid 2px black;
+}
+.input, .input2 {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0px;
+    text-align: center;
+}
+.input {
+    margin-top: 50px;
+}
+.submit {
+    margin: 5px;
+    padding: 3px;
+    width: 100px;
+    align-self: center;
+}
+
+
