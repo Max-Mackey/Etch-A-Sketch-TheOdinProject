@@ -20,6 +20,9 @@ button {
     justify-content: center;
 }
 .board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(100% / var(--cols)), 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(calc(100% / var(--rows)), 1fr));
     margin-left: 150px;
     min-width: 640px;
     min-height: 640px;
