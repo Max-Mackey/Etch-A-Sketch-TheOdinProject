@@ -36,23 +36,42 @@ document.addEventListener("DOMContentLoaded", function() {
             div.style.border ='solid 1px rgba(0, 0, 0, .05)';
             div.style.padding = 0;
             div.style.margin = 0;
-            div.style.backgroundColor = 'white';
             document.querySelector('.board').appendChild(div);   
         }
 
-        // creating mouse down and move move logic to color divs black
-        const drawMe = document.querySelectorAll('.drawMe');
-        drawMe.forEach(function(element) {
-            element.addEventListener('mousedown', function(){
-                element.style.backgroundColor ='black';
-            })
-            element.addEventListener('mousemove', function(event) {
-                if (event.buttons === 1) {
+        // colors generated divs black on mousedown
+        const black = document.querySelector('.black');
+        black.addEventListener('mousedown', function (event) {
+            if (event.button ===0) {
+            const drawMe = document.querySelectorAll('.drawMe');
+            drawMe.forEach(function(element) {
+                element.addEventListener('mousedown', function(){
                     element.style.backgroundColor ='black';
-                }
-            });     
-        });
+                })
+                element.addEventListener('mousemove', function(event) {
+                    if (event.buttons === 1) {
+                        element.style.backgroundColor ='black';
+                    }
+                });     
+            });
+        };
+    })
 
+        //colors generated divs white on mousedown "erases" them
+        const eraser = document.querySelector('.eraser');
+        eraser.addEventListener('mousedown', function (event) {
+            if (event.button === 0) {
+                const eraseMeElements = document.querySelectorAll('.drawMe');
+                eraseMeElements.forEach(function(element) {
+                    element.addEventListener('mousemove', function (event) {
+                        if (event.buttons === 1) {
+                            element.style.backgroundColor = 'white';
+                    }
+                });
+            });
+        }
+    });
+        
         // attempting to create rainbow color once a button is pushed on the webpage
         const rainbow = document.querySelector('.rainbow');
         rainbow.addEventListener('mousedown', function (event) {
@@ -60,11 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 const drawMeElements = document.querySelectorAll('.drawMe');
                 drawMeElements.forEach(function(element) {
                     element.addEventListener('mousemove', function (event) {
-                        if (event.buttons ===1 ) { //checks if left mouse is held down
-                            const red = Math.floor(Math.random() * 256);
-                            const green = Math.floor(Math.random() * 256);
-                            const blue = Math.floor(Math.random() * 256);
-                            element.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+                        if (event.buttons ===1 ) {
+                                const red = Math.floor(Math.random() * 256);
+                                const green = Math.floor(Math.random() * 256);
+                                const blue = Math.floor(Math.random() * 256);
+                                element.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
                         }
                     });
                 });
